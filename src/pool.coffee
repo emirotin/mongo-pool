@@ -21,7 +21,7 @@ module.exports = class Pool
           console.log "Mongo Pool conn #{n} created"
           @connections.push conn
         next err, conn
-    , (err, connections) ->
+    , (err, connections) =>
       @success err
 
   close: (cb) ->

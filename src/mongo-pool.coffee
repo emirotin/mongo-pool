@@ -8,10 +8,11 @@ connectMongo = (config, callback)->
     if err then throw err
     if config.user
       db.authenticate config.user, config.password, {}, (err, success) ->
-        if err then throw err
-        callback db
+        callback err, db
     else
-      callback db
+      callback null, db
+
+module.exports.connect = connectMongo
 
 module.exports.create = (config, callback) ->
   pool = new Pool

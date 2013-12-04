@@ -1,2 +1,2 @@
 require('coffee-script');
-require('src/mongo-pool');
+module.exports = require('./src/mongo-pool');

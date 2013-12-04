@@ -1,4 +1,4 @@
 mongo-pool
 ==========
 
-maintains pool of MongoDB connections
+Maintains a pool of MongoDB connections.

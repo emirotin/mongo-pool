@@ -1,7 +1,7 @@
 mongo = require 'mongodb'
 Pool = require './pool'
 
-connectMongo = (config, callback)->
+connectMongo = (config, callback) ->
   dbServer = new mongo.Server config.host, config.port, auto_reconnect: true
   dbCon = new mongo.Db config.db, dbServer, safe: true
   dbCon.open (err, db) ->

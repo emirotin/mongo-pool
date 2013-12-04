@@ -32,7 +32,7 @@ module.exports = class Pool
   acquire: ->
     if @connections.length > 0
       clientId = _.random(0, @connections.length - 1)
-      console.log "Mongo Pool conn #{clientId} acquired"
+      #console.log "Mongo Pool conn #{clientId} acquired"
       @connections[clientId]
 
 

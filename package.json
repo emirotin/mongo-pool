@@ -1,6 +1,6 @@
 {
   "name": "mongo-pool2",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Maintains a pool of MongoDB connections",
   "main": "index.js",
   "scripts": {},

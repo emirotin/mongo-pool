@@ -16,9 +16,9 @@ module.exports = class Pool
     async.times @max, (n, next) =>
       @create (err, conn) =>
         if err
-          console.log "Mongo Pool conn #{n}: error", err
+          console.error "Mongo Pool conn #{n}: error", err
         else
-          console.log "Mongo Pool conn #{n} created"
+          console.debug "Mongo Pool conn #{n} created"
           @connections.push conn
         next err, conn
     , (err, connections) =>

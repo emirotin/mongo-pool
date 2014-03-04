@@ -6,4 +6,5 @@ describe 'Mongo Pool', ->
     mongoPool.connect testsCommon.config, (err, db) ->
       (not err?).should.be.ok
       (db?).should.be.ok
+      db._state.should.be.equal 'connected'
       done()

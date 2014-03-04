@@ -30,4 +30,3 @@ module.exports.create = (config, callback) ->
       connectMongo config, cb, false
     success: ->
       callback null, pool
-  return

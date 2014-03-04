@@ -4,7 +4,7 @@ Pool = require './pool'
 cachedConnections = {}
 
 connectMongo = (config, callback, useCache=true) ->
-  cacheKey = "auth=#{!!config.user};user=#{config.user};password=#{config.password}"
+  cacheKey = ("#{k}=#{v}" for k, v of config).join(';')
   if useCache and cachedConnections[cacheKey]
     return callback null, cachedConnections[cacheKey]
   cb = (err, db) ->
@@ -24,9 +24,10 @@ connectMongo = (config, callback, useCache=true) ->
 module.exports.connect = connectMongo
 
 module.exports.create = (config, callback) ->
-  new Pool
+  pool = new Pool
     max: config.max or 5
     create: (cb) ->
       connectMongo config, cb, false
     success: ->
       callback null, pool
+  return

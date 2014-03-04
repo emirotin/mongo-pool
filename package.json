@@ -1,9 +1,11 @@
 {
   "name": "mongo-pool2",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Maintains a pool of MongoDB connections",
   "main": "lib/mongo-pool.js",
-  "scripts": {},
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --compilers coffee:coffee-script/register -r should"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/emirotin/mongo-pool.git"

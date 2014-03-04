@@ -18,7 +18,6 @@ module.exports = class Pool
         if err
           console.error "Mongo Pool conn #{n}: error", err
         else
-          console.debug "Mongo Pool conn #{n} created"
           @connections.push conn
         next err, conn
     , (err, connections) =>

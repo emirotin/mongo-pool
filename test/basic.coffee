@@ -1,4 +1,4 @@
-mongoPool = require('..')
+mongoPool = require('../src/mongo-pool')
 testsCommon = require('./common')
 
 describe 'Mongo Pool', ->

@@ -1,5 +1,3 @@
-mongoPool = require('..')
-
 config =
   host: 'localhost'
   port: 27017

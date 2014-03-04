@@ -1,4 +1,4 @@
-mongoPool = require('..')
+mongoPool = require('../src/mongo-pool')
 testsCommon = require('./common')
 
 describe 'Mongo Pool', ->
@@ -17,7 +17,6 @@ describe 'Mongo Pool', ->
     mongoPool.connect testsCommon.config, (err, db1) ->
       (not err?).should.be.ok
       (db1?).should.be.ok
-      console.log 1
       mongoPool.connect testsCommon.config, (err, db2) ->
         (not err?).should.be.ok
         (db2?).should.be.ok

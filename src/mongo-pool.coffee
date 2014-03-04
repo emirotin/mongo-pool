@@ -24,7 +24,7 @@ connectMongo = (config, callback, useCache=true) ->
 module.exports.connect = connectMongo
 
 module.exports.create = (config, callback) ->
-  pool = new Pool
+  new Pool
     max: config.max or 5
     create: (cb) ->
       connectMongo config, cb, false

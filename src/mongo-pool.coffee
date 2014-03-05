@@ -14,7 +14,8 @@ connectMongo = (config, callback, useCache=true) ->
   dbServer = new mongo.Server config.host, config.port, auto_reconnect: true
   dbCon = new mongo.Db config.db, dbServer, safe: true
   dbCon.open (err, db) ->
-    if err then throw err
+    if err
+      return cb err, db
     if config.user
       db.authenticate config.user, config.password, {}, (err, success) ->
         cb err, db

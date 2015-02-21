@@ -17,3 +17,11 @@ describe 'Mongo Pool', ->
       for i in [0...10]
         (pool.acquire()?).should.be.ok
       done()
+
+  it 'should be closeable', (done) ->
+    mongoPool.create testsCommon.config, (err, pool) ->
+      (not err?).should.be.ok
+      (pool?).should.be.ok
+      pool.close (err) ->
+        (not err?).should.be.ok
+        done()

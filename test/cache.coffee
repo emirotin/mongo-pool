@@ -1,7 +1,7 @@
 mongoPool = require('../src/mongo-pool')
 testsCommon = require('./common')
 
-describe 'Mongo Pool', ->
+describe 'Mongo Pool Cache', ->
 
   it 'should use cache', (done) ->
     mongoPool.connect testsCommon.config, (err, db1) ->
